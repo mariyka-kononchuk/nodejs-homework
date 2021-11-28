@@ -1,4 +1,4 @@
-const contactsOperations = require("./contacts");
+const contactsOperations = require("./controllers/contacts");
 const argv = require('yargs').argv;
 
 async function invokeAction({ action, id, name, email, phone }) {
@@ -31,4 +31,8 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-invokeAction(argv);
+//invokeAction(argv);
+
+(async () => {
+    await invokeAction(argv)
+})()
